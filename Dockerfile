@@ -18,4 +18,4 @@ COPY http_server.py /http_server.py
 EXPOSE 8020
 
 ENTRYPOINT ["/http_server.py"]
-HEALTHCHECK CMD curl -I --connect-timeout 3 --max-time 5 --fail http://localhost:8020 || exit 1
+HEALTHCHECK --interval=5m --timeout=1m --start-period=45s CMD curl -I --connect-timeout 3 --max-time 10 --retry 3 --fail http://localhost:8020 || exit 1
