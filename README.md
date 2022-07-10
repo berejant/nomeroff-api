@@ -1,4 +1,7 @@
-> docker run -p 8080:8080 -it nomeroff -d --restart always berejant/nomeroff-api:v3.1.0
+Run container:
+```
+docker run -p 8080:8080 -it nomeroff -d --restart always berejant/nomeroff-api:v3.1.0
+```
 
 Check that container works:
 ```commandline
@@ -6,5 +9,7 @@ curl --fail -s https://raw.githubusercontent.com/ria-com/nomeroff-net/v3.1.0/dat
 curl http://localhost:8080/ -X POST --data-binary @- 
 ```
 
-How to send any other image
-> curl http://localhost:8080/ -X POST  --data-binary @{PATH_TO_IMAGE_FILE}
+How to send any image:
+```
+curl http://localhost:8080/ -X POST  --data-binary @{PATH_TO_IMAGE_FILE}
+```
