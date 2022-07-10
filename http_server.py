@@ -50,7 +50,6 @@ if __name__ == '__main__':
         sys.exit(0)
 
     signal.signal(signal.SIGTERM, stop)
-    signal.signal(signal.SIGKILL, stop)
 
     # run server in daemon thread. When the main thread finishes
     # the daemon will also be killed.
